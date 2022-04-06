@@ -26,42 +26,58 @@ document.addEventListener("DOMContentLoaded", function() {
 function runGame(playerChoice) {
     let choiceNum = Math.floor(Math.random() * 3);
     let computerOptions = ['rock', 'paper', 'scissors'];
-    let result = document.getElementById("result");
+    let result = document.getElementsByClassName("results");
+    let playerScore = 0;
+    let computerScore = 0;
+    let playerScoreBoard = document.getElementsByClassName("player-count");
+    let computerScoreBoard = document.getElementsByClassName("computer-count")
     computerChoice = computerOptions[choiceNum];
-    pickWinner(playerChoice, computerChoice);
-}   
-
-function pickWinner(playerChoice, computerChoice) {
 
     if (playerChoice === computerChoice) {
-        result.textContent = "This game has tied. No points awarded!";
+        result.innerText = "This game has tied. No points awarded!";
     }
 
-    if (playerChoice === "rock") {
-        if (computerChoice === "paper") {
-            result.textContent = `The computer has won this round with paper. Please try again.`;
+    else if (playerChoice === "rock") {
+        if (computerChoice === 'paper') {
+            result.innerHTML = "The computer has won this round with paper. Please try again.";
+            computerScore++;
+            computerScoreBoard.textContent = computerScore;
         } else {
-            winner = "player";
+            result.innerHTML = "Congratulations you have won this round. Computer played scissors.";
+            playerScore++;
+            playerScoreBoard.textContent = playerScore;
         }
     }
 
-    if (playerChoice === "paper") {
-        if (computerChoice === "scissors") {
-            result.textContent = `The computer has won this round with scissors. Please try again.`;
+    else if (playerChoice === "paper") {
+        if (computerChoice === 'scissors') {
+            result.innerHTML = "The computer has won this round with scissors. Please try again.";
+            computerScore++;
+            computerScoreBoard.textContent = computerScore;
         } else {
-            winner = "player";
+            result.innerHTML = "Congratulations you have won this round. Computer played rock.";
+            playerScore++;
+            playerScoreBoard.textContent = playerScore;
         }
     }
 
-    if (playerChoice === "scissors") {
-        if (computerChoice === "rock") {
-            result.textContent = `The computer has won this round with rock. Please try again.`;
+    else if (playerChoice === "scissors") {
+        if (computerChoice === 'rock') {
+            result.innerHTML = "The computer has won this round with rock. Please try again.";
+            computerScore++;
+            computerScoreBoard.textContent = computerScore;
         } else {
-            winner = "player";
+            result.innerHTML = "Congratulations you have won this round. Computer played paper.";
+            playerScore++;
+            playerScoreBoard.textContent = playerScore;
         }
     }
-}
+}   
 
 function incrementScore() {
+
+}
+
+function showInstructions() {
 
 }
