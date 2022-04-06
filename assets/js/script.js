@@ -37,12 +37,42 @@ let winner = (player, computer) => {
         result.textContent = 'You have tied.'
     }
 
+    // Rules for player selection Rock
     else if (player == 'rock') {
         if (computer == 'paper') {
-            result.textContent = 'Computer has won with Paper';
+            result.textContent = 'You Lost! The Computer has won with Paper';
             computerScore++;
             computerScoreBoard.textContent = computerScore;
         }
-        
+        else {
+            result.textContent = 'Congratulations you have won!';
+            playerScore++;
+            playerScoreBoard.textContent = playerScore;
+        }
     }
-}
+    // Rules for player selection Scissors
+    else if (player == 'scissors') {
+        if(computer == 'rock') {
+            result.textContent = 'You Lost! The Computer has won with Rock';
+            computerScore++;
+            computerScoreBoard.textContent = computerScore;
+        }
+        else {
+            result.textContent = 'Congratulations you have won!';
+            playerScore++;
+            playerScoreBoard.textContent = playerScore;
+        }
+    }
+    //Rules for player selection Paper
+    else if (player == 'paper') {
+        if(computer == 'scissors') {
+            result.textContent = 'You Lost! The Computer has won with Scissors';
+            computerScore++;
+            computerScoreBoard.textContent = computerScore;
+        }
+        else {
+            result.textContent = 'Congratulations you have won!';
+            playerScore++;
+            playerScoreBoard.textContent = playerScore;
+        }
+    }
