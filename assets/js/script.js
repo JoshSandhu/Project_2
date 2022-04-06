@@ -8,24 +8,58 @@ document.addEventListener("DOMContentLoaded", function() {
         button.addEventListener("click", function() {
             if (this.getAttribute("data-type") === 'restart') {
                 alert("You clicked Restart!");
+            } else if (this.getAttribute("data-type") === 'instructions') {
+                showInstructions();
             } else {
-                let gameType = this.getAttribute("data-type");
-                alert(`You clicked ${gameType}`)
+                let playerChoice = this.getAttribute("data-type");
+                runGame(playerChoice);
             }
         })
     }
 })
 
-function runGame() {
+/**
+ * The main game loop called when the script is loaded as well
+ * as in between games
+ */
 
-}
+function runGame(playerChoice) {
+    let choiceNum = Math.floor(Math.random() * 3);
+    let computerOptions = ['rock', 'paper', 'scissors'];
+    let result = document.getElementById("result");
+    computerChoice = computerOptions[choiceNum];
+    pickWinner(playerChoice, computerChoice);
+}   
 
-function computerPick() {
+function pickWinner(playerChoice, computerChoice) {
 
-}
+    if (playerChoice === computerChoice) {
+        result.textContent = "This game has tied. No points awarded!";
+    }
 
-function pickWinner() {
+    if (playerChoice === "rock") {
+        if (computerChoice === "paper") {
+            result.textContent = `The computer has won this round with paper. Please try again.`;
+        } else {
+            winner = "player";
+        }
+    }
 
+    if (playerChoice === "paper") {
+        if (computerChoice === "scissors") {
+            result.textContent = `The computer has won this round with scissors. Please try again.`;
+        } else {
+            winner = "player";
+        }
+    }
+
+    if (playerChoice === "scissors") {
+        if (computerChoice === "rock") {
+            result.textContent = `The computer has won this round with rock. Please try again.`;
+        } else {
+            winner = "player";
+        }
+    }
 }
 
 function incrementScore() {
