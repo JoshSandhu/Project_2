@@ -5,31 +5,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Google font link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+
     <title>Rock, Paper, Scissors, Fire, Water.</title>
 </head>
 <body>
-    <!-- Title -->
-    <div class="title">
-        <h1 class="logo">Rock, Paper, Scissors, Fire and Water.</h1>
+    <div class="game">
+        <!-- Title -->
+        <div id="title">
+            <h1 class="logo">Rock, Paper, Scissors, Fire and Water.</h1>
+        </div>
+
+        <!-- Display Score of player and computer -->
+        <div id="scores">
+            <h2>Scores</h2>
+            <div class="player-score">
+                <h3>Player</h3>
+                <p class="player-count">0</p>
+            </div>
+            <div class="computer-score">
+                <h3>Computer</h3>
+                <p class="computer-count">0</p>
+            </div>
+        </div>
+
+        <!-- Instructions section -->
+        <div id="instructions">
+            <h2>Instructions</h2>
+            <div class="instructions-written"></div>
+            <div class="instructions-button"></div>
+        </div>
+
+        <!-- Option buttons for player -->
+        <div id="buttons">
+            <div>
+                <h2 class="button-heading">Choose your move to start.</h2>
+            </div>
+            <div class="options"></div>
+        </div>
+
+        <!-- Result of last game -->
+        <div id="results"></div>
+
+        <!-- Restart the game-->
+        <div id="restart"></div>
+
+        <!-- Share your score on socials -->
+        <div id="socials"></div>
     </div>
-
-    <!-- Display Score of player and computer -->
-    <div>Player</div>
-    <div>Computer</div>
-
-    <!-- Option buttons for player -->
-    <div></div>
-    <div></div>
-
-    <!-- Result of last game -->
-    <div></div>
-
-    <!-- Restart the game-->
-    <div></div>
-
-    <!-- Share your score on socials -->
-    <div></div>
     
+    <!-- Javascript and Font awsome links -->
     <script src="assets/js/script.js"></script>
+    <script src="https://kit.fontawesome.com/23a0e3507f.js" crossorigin="anonymous"></script>
 </body>
 </html>
