@@ -69,7 +69,7 @@ button {
     padding: 10px;
 }
 
-.rock, .paper, .scissors, .fire, .water {
+.rock, .paper, .scissors {
     padding: 10px;
     width: 250px;
     border-radius: 10px;
