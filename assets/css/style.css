@@ -46,3 +46,50 @@ button {
     justify-content: space-evenly;
     border: 5px black solid;
 }
+
+/* Styling for instructions button */
+
+.show-instructions {
+    padding: 10px;
+    width: 250px;
+    border-radius: 10px;
+    color: white;
+    background: black;
+    border-color: grey;
+    border: none;
+}
+
+/* Styling for options buttons */
+
+.options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 10px;
+}
+
+.rock, .paper, .scissors, .fire, .water {
+    padding: 10px;
+    width: 250px;
+    border-radius: 10px;
+    border-color: grey;
+    border: none;
+}
+
+/* restart button */
+
+#restart {
+    display: none;
+    margin-top: 10px;
+    padding: 5px;
+    background: black;
+    color: white;
+    border-radius: 10px;
+}
+
+/* Result */
+
+#result {
+    margin-top: 20px;
+}
