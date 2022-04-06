@@ -40,7 +40,7 @@
                 <p>For instructions please press the button below.</p>
             </div>
             <div class="instructions-button">
-                <button class="show-instructions">Show Instructions</button>
+                <button data-type="instructions" class="btn btn--instructions">Show Instructions</button>
             </div>
         </div>
 
@@ -50,9 +50,9 @@
                 <h2 class="button-heading">Choose your move to start.</h2>
             </div>
             <div class="options">
-                <button class="rock">Rock <i class="fa-solid fa-hand-back-fist"></i></button>
-                <button class="paper">Paper <i class="fa-solid fa-hand"></i></button>
-                <button class="scissors">Scissors <i class="fa-solid fa-hand-scissors"></i></button>
+                <button data-type="rock" class="btn btn--rock">Rock <i class="fa-solid fa-hand-back-fist"></i></button>
+                <button data-type="paper" class="btn btn--paper">Paper <i class="fa-solid fa-hand"></i></button>
+                <button data-type="scissors" class="btn btn--scissors">Scissors <i class="fa-solid fa-hand-scissors"></i></button>
             </div>
         </div>
 
@@ -61,7 +61,7 @@
 
         <!-- Restart the game-->
         <div>
-            <button id="restart"></button>
+            <button data-type="restart" class="btn btn--restart">Restart</button>
         </div>
 
         <!-- Share your score on socials -->

@@ -47,18 +47,6 @@ button {
     border: 5px black solid;
 }
 
-/* Styling for instructions button */
-
-.show-instructions {
-    padding: 10px;
-    width: 250px;
-    border-radius: 10px;
-    color: white;
-    background: black;
-    border-color: grey;
-    border: none;
-}
-
 /* Styling for options buttons */
 
 .options {
@@ -69,7 +57,7 @@ button {
     padding: 10px;
 }
 
-.rock, .paper, .scissors {
+.btn {
     padding: 10px;
     width: 250px;
     border-radius: 10px;
