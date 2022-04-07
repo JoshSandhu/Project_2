@@ -67,14 +67,3 @@ button {
     background: grey;
     color: white;
 }
-
-/* Result */
-
-#result {
-    margin-top: 20px;
-}
-
-.results {
-    font-size: 200%;
-    padding: 20px;
-}

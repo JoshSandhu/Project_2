@@ -30,64 +30,56 @@ function runGame(playerChoice) {
     let winner = ['player', 'computer', 'tie'];
 
     if (playerChoice === computerChoice) {
-        winner = 'tie';
+        alert("This game is a tie. Please try again");
     }
 
     else if (playerChoice === "rock") {
         if (computerChoice === 'paper') {
-            winner = 'computer';
+            alert(`Ow noo . . . The computer has won this game with ${computerChoice}. Please try again.`);
+            incrementComputerScore();
         } else {
-            winner = 'player';
+            alert(`Congratulations you have won this game. The computer chose ${computerChoice}.`);
+            incrementPlayerScore();
         }
     }
 
     else if (playerChoice === "paper") {
         if (computerChoice === 'scissors') {
-            winner = 'computer';
+            alert(`Ow noo . . . The computer has won this game with ${computerChoice}. Please try again.`);
+            incrementComputerScore();
         } else {
-            winner = 'player';
+            alert(`Congratulations you have won this game. The computer chose ${computerChoice}.`);
+            incrementPlayerScore();
         }
     }
 
     else if (playerChoice === "scissors") {
         if (computerChoice === 'rock') {
-            winner = 'computer';
+            alert(`Ow noo . . . The computer has won this game with ${computerChoice}. Please try again.`);
+            incrementComputerScore();
         } else {
-            winner = 'player';
+            alert(`Congratulations you have won this game. The computer chose ${computerChoice}.`);
+            incrementPlayerScore();
         }
     }
-    incrementScore(winner, computerChoice);
-    console.log(winner);
 }
 
 /**
- * This function is used to keep track of the score depending on
- * the winner of the previous game.
+ * This function is used to show and increment the score of the player.
  */
 
-function incrementScore(winner, computerChoice) {
-    let result = document.getElementsByClassName("results");
-    let playerScore = 0;
-    let computerScore = 0;
-    let playerScoreBoard = document.getElementsByClassName("player-count");
-    let computerScoreBoard = document.getElementsByClassName("computer-count");
+function incrementPlayerScore() {
+    let oldScore = parseInt(document.getElementById("player-count").innerText);
+    document.getElementById("player-count").innerText = ++oldScore;
+}
 
-    if (winner === 'player') {
-        result.innerHTML = `Congratulations you have won this game! The computer played ${computerChoice}`;
-        playerScore++;
-        playerScoreBoard.innerHTML = playerScore;
-    }
-    
-    else if (winner === 'computer') {
-        result.innerHTML = `Ohh no! You lost this game. The computer played ${computerChoice} please try again.`;
-        computerScore++;
-        computerScoreBoard.innerHTML = computerScore;
-    }
+/**
+ * This function is used to show and increment the score of the computer.
+ */
 
-    else {
-        result.innerHTML = `This game was a tie and no points were awarded. Computer played ${computerChoice}`
-    }
-    console.log(result);
+function incrementComputerScore() {
+    let oldScore = parseInt(document.getElementById("computer-count").innerText);
+    document.getElementById("computer-count").innerText = ++oldScore;
 }
 
 function showInstructions() {
