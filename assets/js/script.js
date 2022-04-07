@@ -56,16 +56,38 @@ function runGame(playerChoice) {
             winner = 'player';
         }
     }
-    incrementScore(winner);
+    incrementScore(winner, computerChoice);
     console.log(winner);
 }
 
-function incrementScore(winner) {
+/**
+ * This function is used to keep track of the score depending on
+ * the winner of the previous game.
+ */
+
+function incrementScore(winner, computerChoice) {
     let result = document.getElementsByClassName("results");
     let playerScore = 0;
     let computerScore = 0;
     let playerScoreBoard = document.getElementsByClassName("player-count");
-    let computerScoreBoard = document.getElementsByClassName("computer-count")
+    let computerScoreBoard = document.getElementsByClassName("computer-count");
+
+    if (winner === 'player') {
+        result.innerHTML = `Congratulations you have won this game! The computer played ${computerChoice}`;
+        playerScore++;
+        playerScoreBoard.innerHTML = playerScore;
+    }
+    
+    else if (winner === 'computer') {
+        result.innerHTML = `Ohh no! You lost this game. The computer played ${computerChoice} please try again.`;
+        computerScore++;
+        computerScoreBoard.innerHTML = computerScore;
+    }
+
+    else {
+        result.innerHTML = `This game was a tie and no points were awarded. Computer played ${computerChoice}`
+    }
+    console.log(result);
 }
 
 function showInstructions() {
