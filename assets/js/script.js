@@ -26,44 +26,46 @@ document.addEventListener("DOMContentLoaded", function() {
 function runGame(playerChoice) {
     let choiceNum = Math.floor(Math.random() * 3);
     let computerOptions = ['rock', 'paper', 'scissors'];
-    let result = document.getElementsByClassName("results");
-    let playerScore = 0;
-    let computerScore = 0;
-    let playerScoreBoard = document.getElementsByClassName("player-count");
-    let computerScoreBoard = document.getElementsByClassName("computer-count")
-    computerChoice = computerOptions[choiceNum];
+    let computerChoice = computerOptions[choiceNum];
+    let winner = ['player', 'computer', 'tie'];
 
     if (playerChoice === computerChoice) {
-        winner = 'tie'
+        winner = 'tie';
     }
 
     else if (playerChoice === "rock") {
         if (computerChoice === 'paper') {
-            winner = 'computer'
+            winner = 'computer';
         } else {
-            winner = 'player'
+            winner = 'player';
         }
     }
 
     else if (playerChoice === "paper") {
         if (computerChoice === 'scissors') {
-            winner = 'computer'
+            winner = 'computer';
         } else {
-            winner = 'player'
+            winner = 'player';
         }
     }
 
     else if (playerChoice === "scissors") {
         if (computerChoice === 'rock') {
-            winner = 'computer'
+            winner = 'computer';
         } else {
-            winner = 'player'
+            winner = 'player';
         }
     }
-}   
+    incrementScore(winner);
+    console.log(winner);
+}
 
 function incrementScore(winner) {
-
+    let result = document.getElementsByClassName("results");
+    let playerScore = 0;
+    let computerScore = 0;
+    let playerScoreBoard = document.getElementsByClassName("player-count");
+    let computerScoreBoard = document.getElementsByClassName("computer-count")
 }
 
 function showInstructions() {
