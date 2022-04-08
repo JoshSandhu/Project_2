@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
     for (let button of buttons) {
         button.addEventListener("click", function() {
             if (this.getAttribute("data-type") === 'restart') {
-                alert("You clicked Restart!");
+                restartGame();
             } else if (this.getAttribute("data-type") === 'instructions') {
                 showInstructions();
             } else {
@@ -137,6 +137,10 @@ function incrementComputerScore() {
     document.getElementById("games-done").innerText = ++games;
 }
 
+/**
+ * This function is used once 10 games have been completed to state the
+ * winner and ask to restart.
+ */
 function endGame() {
     let player = document.getElementById("player-count").innerText;
     let computer = document.getElementById("computer-count").innerText;
@@ -151,7 +155,9 @@ function endGame() {
 }
 
 function restartGame() {
-
+    document.getElementById("games-done").innerText = "0";
+    document.getElementById("computer-count").innerText = "0";
+    document.getElementById("player-count").innerText = "0";
 }
 
 function showInstructions() {
