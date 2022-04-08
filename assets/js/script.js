@@ -14,9 +14,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 let playerChoice = this.getAttribute("data-type");
                 runGame(playerChoice);
             }
-        })
+        });
     }
-})
+});
 
 /**
  * The main game loop called when the script is loaded as well
@@ -146,7 +146,7 @@ function endGame() {
     let computer = document.getElementById("computer-count").innerText;
 
     if (player == computer) {
-        alert("This round of games was a tie. Please press Restart to play again.")
+        alert("This round of games was a tie. Please press Restart to play again.");
     } else if (player > computer) {
         alert("Congratulations you have won this round of games. Please press Restart to play again.");
     } else {
@@ -161,5 +161,5 @@ function restartGame() {
 }
 
 function showInstructions() {
-    alert("Welcome to our Rock, Paper, Scissors, Lizard and Spock game. The rules are simple: Scissors cuts paper, paper covers rock, rock crushes lizard, lizard poisons Spock, Spock smashes scissors, scissors decapitates lizard, lizard eats paper, paper disproves Spock, Spock vaporizes rock, and as it always has, rock crushes scissors. Select your choice to start the game today.")
+    alert("Welcome to our Rock, Paper, Scissors, Lizard and Spock game. The rules are simple: Scissors cuts paper, paper covers rock, rock crushes lizard, lizard poisons Spock, Spock smashes scissors, scissors decapitates lizard, lizard eats paper, paper disproves Spock, Spock vaporizes rock, and as it always has, rock crushes scissors. Select your choice to start the game today.");
 }
