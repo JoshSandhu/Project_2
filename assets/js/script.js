@@ -8,8 +8,6 @@ document.addEventListener("DOMContentLoaded", function() {
         button.addEventListener("click", function() {
             if (this.getAttribute("data-type") === 'restart') {
                 restartGame();
-            } else if (this.getAttribute("data-type") === 'instructions') {
-                showInstructions();
             } else {
                 let playerChoice = this.getAttribute("data-type");
                 runGame(playerChoice);
@@ -125,6 +123,16 @@ function incrementComputerScore(computerChoice) {
 }
 
 /**
+ * This function is used when the game has tied/
+ */
+
+function tieGame(computerChoice) {
+    let games = parseInt(document.getElementById("games-done").innerText);
+    document.getElementById("games-done").innerText = ++games;
+    document.getElementById("game-results").innerHTML = `This game is a tie. Please try again.`;
+}
+
+/**
  * This function is used once 10 games have been completed to state the
  * winner and ask to restart.
  */
@@ -145,8 +153,4 @@ function restartGame() {
     document.getElementById("games-done").innerText = "0";
     document.getElementById("computer-count").innerText = "0";
     document.getElementById("player-count").innerText = "0";
-}
-
-function showInstructions() {
-    alert("Welcome to our Rock, Paper, Scissors, Lizard and Spock game. The rules are simple: Scissors cuts paper, paper covers rock, rock crushes lizard, lizard poisons Spock, Spock smashes scissors, scissors decapitates lizard, lizard eats paper, paper disproves Spock, Spock vaporizes rock, and as it always has, rock crushes scissors. Select your choice to start the game today.");
 }
