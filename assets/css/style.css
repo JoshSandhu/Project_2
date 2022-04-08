@@ -1,10 +1,12 @@
 /* Applies to whole document */
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     color: black;
     font-family: 'Patrick Hand', cursive;
+    position: relative;
 }
 
 h2, h3 {
@@ -23,28 +25,35 @@ button {
 }
 
 /* Center game */
+
 .game {
     display: flex;
     flex-direction: column;
-    height: 100vh;
-    width: 100vw;
+    width: 75%;
+    margin: 0 auto;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
 
 /* Title */
+
 .logo {
     font-size: 500%;
 }
 
 /* Scores */
+
 .player-score, .computer-score {
     display: flex;
     flex-direction: column;
-    width: 30vw;
+    min-width: 30vw;
     justify-content: space-evenly;
     border: 5px black solid;
+}
+
+.computer-score {
+    border-top: none;
 }
 
 /* Styling for buttons */
@@ -59,12 +68,23 @@ button {
 
 .btn {
     padding: 10px;
-    width: 250px;
+    width: 150px;
     border-radius: 10px;
     border: none;
+    margin: 10px;
 }
 
 .btn:hover {
     background: grey;
     color: white;
+}
+
+/**  Footer */
+
+footer {
+    background-color: gainsboro;
+    min-height: 100px;
+    padding: 10px;
+    margin: 10px;
+    width: 100%;
 }
