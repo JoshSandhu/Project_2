@@ -36,21 +36,18 @@ function runGame(playerChoice) {
 // Players choice matches the computer choice
 
     else if (playerChoice === computerChoice) {
-        alert("This game is a tie. Please try again");
+        tieGame(computerChoice);
     }
 
 // Players choice of Rock
 
     else if (playerChoice === "rock") {
         if (computerChoice === 'paper') {
-            alert(`Ow noo . . . The computer has won this game with ${computerChoice}. Please try again.`);
-            incrementComputerScore();
+            incrementComputerScore(computerChoice);
         } else if (computerChoice === 'spock') {
-            alert(`Ow noo . . . The computer has won this game with ${computerChoice}. Please try again.`);
-            incrementComputerScore();
+            incrementComputerScore(computerChoice);
         } else {
-            alert(`Congratulations you have won this game. The computer chose ${computerChoice}.`);
-            incrementPlayerScore();
+            incrementPlayerScore(computerChoice);
         }
     }
 
@@ -58,14 +55,11 @@ function runGame(playerChoice) {
 
     else if (playerChoice === "paper") {
         if (computerChoice === 'scissors') {
-            alert(`Ow noo . . . The computer has won this game with ${computerChoice}. Please try again.`);
-            incrementComputerScore();
+            incrementComputerScore(computerChoice);
         } else if (computerChoice === 'lizard') {
-            alert(`Ow noo . . . The computer has won this game with ${computerChoice}. Please try again.`);
-            incrementComputerScore();
+            incrementComputerScore(computerChoice);
         } else {
-            alert(`Congratulations you have won this game. The computer chose ${computerChoice}.`);
-            incrementPlayerScore();
+            incrementPlayerScore(computerChoice);
         }
     }
 
@@ -73,14 +67,11 @@ function runGame(playerChoice) {
 
     else if (playerChoice === "scissors") {
         if (computerChoice === 'rock') {
-            alert(`Ow noo . . . The computer has won this game with ${computerChoice}. Please try again.`);
-            incrementComputerScore();
+            incrementComputerScore(computerChoice);
         } else if (computerChoice === 'spock') {
-            alert(`Ow noo . . . The computer has won this game with ${computerChoice}. Please try again.`);
-            incrementComputerScore();
+            incrementComputerScore(computerChoice);
         } else {
-            alert(`Congratulations you have won this game. The computer chose ${computerChoice}.`);
-            incrementPlayerScore();
+            incrementPlayerScore(computerChoice);
         }
     }
 
@@ -88,14 +79,11 @@ function runGame(playerChoice) {
 
     else if (playerChoice === "lizard") {
         if (computerChoice === 'scissors') {
-            alert(`Ow noo . . . The computer has won this game with ${computerChoice}. Please try again.`);
-            incrementComputerScore();
+            incrementComputerScore(computerChoice);
         } else if (computerChoice === 'rock') {
-            alert(`Ow noo . . . The computer has won this game with ${computerChoice}. Please try again.`);
-            incrementComputerScore();
+            incrementComputerScore(computerChoice);
         } else {
-            alert(`Congratulations you have won this game. The computer chose ${computerChoice}.`);
-            incrementPlayerScore();
+            incrementPlayerScore(computerChoice);
         }
     }
 
@@ -103,14 +91,11 @@ function runGame(playerChoice) {
 
     else if (playerChoice === "spock") {
         if (computerChoice === 'paper') {
-            alert(`Ow noo . . . The computer has won this game with ${computerChoice}. Please try again.`);
-            incrementComputerScore();
+            incrementComputerScore(computerChoice);
         } else if (computerChoice === 'lizard') {
-            alert(`Ow noo . . . The computer has won this game with ${computerChoice}. Please try again.`);
-            incrementComputerScore();
+            incrementComputerScore(computerChoice);
         } else {
-            alert(`Congratulations you have won this game. The computer chose ${computerChoice}.`);
-            incrementPlayerScore();
+            incrementPlayerScore(computerChoice);
         }
     }
 }
@@ -119,22 +104,24 @@ function runGame(playerChoice) {
  * This function is used to show and increment the score of the player.
  */
 
-function incrementPlayerScore() {
+function incrementPlayerScore(computerChoice) {
     let oldScore = parseInt(document.getElementById("player-count").innerText);
     let games = parseInt(document.getElementById("games-done").innerText);
     document.getElementById("player-count").innerText = ++oldScore;
     document.getElementById("games-done").innerText = ++games;
+    document.getElementById("game-results").innerHTML =  `Congratulations you have won this game. The computer chose ${computerChoice}.`;
 }
 
 /**
  * This function is used to show and increment the score of the computer.
  */
 
-function incrementComputerScore() {
+function incrementComputerScore(computerChoice) {
     let oldScore = parseInt(document.getElementById("computer-count").innerText);
     let games = parseInt(document.getElementById("games-done").innerText);
     document.getElementById("computer-count").innerText = ++oldScore;
     document.getElementById("games-done").innerText = ++games;
+    document.getElementById("game-results").innerHTML = `Ow noo . . . The computer has won this game with ${computerChoice}. Please try again.`;
 }
 
 /**
@@ -146,11 +133,11 @@ function endGame() {
     let computer = document.getElementById("computer-count").innerText;
 
     if (player == computer) {
-        alert("This round of games was a tie. Please press Restart to play again.");
+        document.getElementById("game-results").innerHTML = "This round of games was a tie. Please press Restart to play again.";
     } else if (player > computer) {
-        alert("Congratulations you have won this round of games. Please press Restart to play again.");
+        document.getElementById("game-results").innerHTML = "Congratulations you have won this round of games. Please press Restart to play again.";
     } else {
-        alert("Ahhh unfortunatly the computer has won this round of games. Please press Restart to play again.");
+        document.getElementById("game-results").innerHTML = "Ahhh unfortunatly the computer has won this round of games. Please press Restart to play again.";
     }
 }
 
