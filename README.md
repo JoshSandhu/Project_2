@@ -78,7 +78,7 @@ After development my testing included users on multiple devices to find any bugs
 - HTML
     * No errors were returned when passing through the official [W3c validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fjoshsandhu.github.io%2FProject_2%2F)
 - CSS
-    * No errors were returned when passing through the official [(Jigsaw) Validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fjoshsandhu.github.io%2FProject_2%2F)
+    * No errors were returned when passing through the official [(Jigsaw) Validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fjoshsandhu.github.io%2FProject_2%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
 - JavaScript
     * A couple of warnings however no errors were found when passing through the official [Jshint validator](https://jshint.com/)
         - The following metrics were returned:
