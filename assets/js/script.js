@@ -3,7 +3,6 @@
 
 document.addEventListener("DOMContentLoaded", function() {
     let buttons = document.getElementsByTagName("button");
-    let gamesDone = document.getElementById("games-done");
 
     for (let button of buttons) {
         button.addEventListener("click", function() {
@@ -28,10 +27,15 @@ function runGame(playerChoice) {
     let choiceNum = Math.floor(Math.random() * 5);
     let computerOptions = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
     let computerChoice = computerOptions[choiceNum];
+    let games = document.getElementById("games-done").innerText;
+
+    if(games == 10) {
+        endGame();
+    }
 
 // Players choice matches the computer choice
 
-    if (playerChoice === computerChoice) {
+    else if (playerChoice === computerChoice) {
         alert("This game is a tie. Please try again");
     }
 
@@ -134,7 +138,16 @@ function incrementComputerScore() {
 }
 
 function endGame() {
+    let player = document.getElementById("player-count").innerText;
+    let computer = document.getElementById("computer-count").innerText;
 
+    if (player == computer) {
+        alert("This round of games was a tie. Please press Restart to play again.")
+    } else if (player > computer) {
+        alert("Congratulations you have won this round of games. Please press Restart to play again.");
+    } else {
+        alert("Ahhh unfortunatly the computer has won this round of games. Please press Restart to play again.");
+    }
 }
 
 function restartGame() {
