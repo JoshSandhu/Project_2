@@ -3,6 +3,7 @@
 
 document.addEventListener("DOMContentLoaded", function() {
     let buttons = document.getElementsByTagName("button");
+    let gamesDone = document.getElementById("games-done");
 
     for (let button of buttons) {
         button.addEventListener("click", function() {
@@ -24,17 +25,23 @@ document.addEventListener("DOMContentLoaded", function() {
  */
 
 function runGame(playerChoice) {
-    let choiceNum = Math.floor(Math.random() * 3);
-    let computerOptions = ['rock', 'paper', 'scissors'];
+    let choiceNum = Math.floor(Math.random() * 5);
+    let computerOptions = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
     let computerChoice = computerOptions[choiceNum];
-    let winner = ['player', 'computer', 'tie'];
+
+// Players choice matches the computer choice
 
     if (playerChoice === computerChoice) {
         alert("This game is a tie. Please try again");
     }
 
+// Players choice of Rock
+
     else if (playerChoice === "rock") {
         if (computerChoice === 'paper') {
+            alert(`Ow noo . . . The computer has won this game with ${computerChoice}. Please try again.`);
+            incrementComputerScore();
+        } else if (computerChoice === 'spock') {
             alert(`Ow noo . . . The computer has won this game with ${computerChoice}. Please try again.`);
             incrementComputerScore();
         } else {
@@ -42,19 +49,59 @@ function runGame(playerChoice) {
             incrementPlayerScore();
         }
     }
+
+// Players choice of Paper
 
     else if (playerChoice === "paper") {
         if (computerChoice === 'scissors') {
             alert(`Ow noo . . . The computer has won this game with ${computerChoice}. Please try again.`);
             incrementComputerScore();
+        } else if (computerChoice === 'lizard') {
+            alert(`Ow noo . . . The computer has won this game with ${computerChoice}. Please try again.`);
+            incrementComputerScore();
         } else {
             alert(`Congratulations you have won this game. The computer chose ${computerChoice}.`);
             incrementPlayerScore();
         }
     }
 
+// Players choice of Scissors
+
     else if (playerChoice === "scissors") {
         if (computerChoice === 'rock') {
+            alert(`Ow noo . . . The computer has won this game with ${computerChoice}. Please try again.`);
+            incrementComputerScore();
+        } else if (computerChoice === 'spock') {
+            alert(`Ow noo . . . The computer has won this game with ${computerChoice}. Please try again.`);
+            incrementComputerScore();
+        } else {
+            alert(`Congratulations you have won this game. The computer chose ${computerChoice}.`);
+            incrementPlayerScore();
+        }
+    }
+
+// Players choice of Lizard
+
+    else if (playerChoice === "lizard") {
+        if (computerChoice === 'scissors') {
+            alert(`Ow noo . . . The computer has won this game with ${computerChoice}. Please try again.`);
+            incrementComputerScore();
+        } else if (computerChoice === 'rock') {
+            alert(`Ow noo . . . The computer has won this game with ${computerChoice}. Please try again.`);
+            incrementComputerScore();
+        } else {
+            alert(`Congratulations you have won this game. The computer chose ${computerChoice}.`);
+            incrementPlayerScore();
+        }
+    }
+
+// Players choice of Spock
+
+    else if (playerChoice === "spock") {
+        if (computerChoice === 'paper') {
+            alert(`Ow noo . . . The computer has won this game with ${computerChoice}. Please try again.`);
+            incrementComputerScore();
+        } else if (computerChoice === 'lizard') {
             alert(`Ow noo . . . The computer has won this game with ${computerChoice}. Please try again.`);
             incrementComputerScore();
         } else {
@@ -70,7 +117,9 @@ function runGame(playerChoice) {
 
 function incrementPlayerScore() {
     let oldScore = parseInt(document.getElementById("player-count").innerText);
+    let games = parseInt(document.getElementById("games-done").innerText);
     document.getElementById("player-count").innerText = ++oldScore;
+    document.getElementById("games-done").innerText = ++games;
 }
 
 /**
@@ -79,7 +128,17 @@ function incrementPlayerScore() {
 
 function incrementComputerScore() {
     let oldScore = parseInt(document.getElementById("computer-count").innerText);
+    let games = parseInt(document.getElementById("games-done").innerText);
     document.getElementById("computer-count").innerText = ++oldScore;
+    document.getElementById("games-done").innerText = ++games;
+}
+
+function endGame() {
+
+}
+
+function restartGame() {
+
 }
 
 function showInstructions() {
